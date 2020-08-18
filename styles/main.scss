@@ -39,7 +39,6 @@ nav {
     ul {
         @include centerFlex();
 
-
         li {
             font-size: 2vh;
             list-style: none;
@@ -48,7 +47,11 @@ nav {
 
         li:hover {
             cursor: pointer;
-            opacity: 50%;
+            color: white;
+        }
+
+        .highlight {
+            color: white;
         }
     }
     z-index: 100;
@@ -58,14 +61,18 @@ nav {
     position: absolute;
     text-align: center;
     width: fit-content;
+    height: 100px;
+    line-height: 100px;
     top: 50vh;
-    margin-top: -60px;
-    font-size: 100px;
+    margin-top: -50px;
+    font-size: 7vw;
     z-index: 100;
+    animation: buttonAnim 2s linear 1s infinite;
 }
 
 .button:hover {
     cursor: pointer;
+    color: white;
 }
 
 .right {
@@ -124,56 +131,75 @@ nav {
     background: lightcoral;
     z-index: 1;
     transition: transform 1s ease-in;
-}
 
-nav {
-    @include absolutePosition();
-    @include centerFlex();
-    width: 100%;
-    padding: 20px;
+    .title-box {
+        position: relative;
+        height: 35vh;
+        width: 55vw;
+        font-size: 2vw;
 
-    h1 {
-        font-size: 3vh;
-    }
+        .title-top {
+            position: relative;
+            height: 70%;
+            border-bottom: 8px solid black;
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: column;
+            overflow: hidden;
 
-    ul {
-        @include centerFlex();
+            h1 {
+                animation: topTitleAnim 1.6s ease;
+            }
 
-
-        li {
-            font-size: 2vh;
-            list-style: none;
-            margin: auto 10px;
+            .job {
+                transition: transform .8s ease;
+                color: rgb(75, 75, 75);
+            }
         }
 
-        li:hover {
-            cursor: pointer;
-            opacity: 50%;
+        .title-bottom {
+            position: relative;
+            height: 30%;
+            overflow: hidden;
+
+            h1 {
+                animation: bottomTitleAnim 2.6s ease;
+            }
         }
     }
-}
-
-.button-box {
-    @include centerFlex();
-    width: 100%;
-
-    .button {
-        text-align: center;
-        width: fit-content;
-        padding: 50px;
-        font-size: 100px;
-    }
-
-    .button:hover {
-        cursor: pointer;
-    }
-
-    .left {
-        opacity: 10%;
-    }
-    
 }
 
 .spacer {
     flex-grow: 1;
+}
+
+@keyframes buttonAnim {
+    0% {
+        margin-left: 0;
+        margin-right: 0;
+    } 50% {
+        margin-left: 10px;
+        margin-right: 10px;
+    } 100% {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@keyframes topTitleAnim {
+    0% {
+        transform: translateY(20vh);
+    } 40%, 60% {
+        transform: translateY(10vh) 
+    } 100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes bottomTitleAnim {
+    0%, 70% {
+        transform: translateY(-10vh);
+    } 100% {
+        transform: translateY(0);
+    }
 }

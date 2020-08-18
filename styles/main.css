@@ -52,7 +52,11 @@ nav ul li {
 
 nav ul li:hover {
   cursor: pointer;
-  opacity: 50%;
+  color: white;
+}
+
+nav ul .highlight {
+  color: white;
 }
 
 .button {
@@ -61,14 +65,19 @@ nav ul li:hover {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  height: 100px;
+  line-height: 100px;
   top: 50vh;
-  margin-top: -60px;
-  font-size: 100px;
+  margin-top: -50px;
+  font-size: 7vw;
   z-index: 100;
+  -webkit-animation: buttonAnim 2s linear 1s infinite;
+          animation: buttonAnim 2s linear 1s infinite;
 }
 
 .button:hover {
   cursor: pointer;
+  color: white;
 }
 
 .right {
@@ -199,83 +208,139 @@ nav ul li:hover {
   transition: transform 1s ease-in, -webkit-transform 1s ease-in;
 }
 
-nav {
-  position: absolute;
-  top: 0;
-  left: 0;
+#red .title-box {
+  position: relative;
+  height: 35vh;
+  width: 55vw;
+  font-size: 2vw;
+}
+
+#red .title-box .title-top {
+  position: relative;
+  height: 70%;
+  border-bottom: 8px solid black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  padding: 20px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
 }
 
-nav h1 {
-  font-size: 3vh;
+#red .title-box .title-top h1 {
+  -webkit-animation: topTitleAnim 1.6s ease;
+          animation: topTitleAnim 1.6s ease;
 }
 
-nav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+#red .title-box .title-top .job {
+  -webkit-transition: -webkit-transform .8s ease;
+  transition: -webkit-transform .8s ease;
+  transition: transform .8s ease;
+  transition: transform .8s ease, -webkit-transform .8s ease;
+  color: #4b4b4b;
 }
 
-nav ul li {
-  font-size: 2vh;
-  list-style: none;
-  margin: auto 10px;
+#red .title-box .title-bottom {
+  position: relative;
+  height: 30%;
+  overflow: hidden;
 }
 
-nav ul li:hover {
-  cursor: pointer;
-  opacity: 50%;
-}
-
-.button-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-}
-
-.button-box .button {
-  text-align: center;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 50px;
-  font-size: 100px;
-}
-
-.button-box .button:hover {
-  cursor: pointer;
-}
-
-.button-box .left {
-  opacity: 10%;
+#red .title-box .title-bottom h1 {
+  -webkit-animation: bottomTitleAnim 2.6s ease;
+          animation: bottomTitleAnim 2.6s ease;
 }
 
 .spacer {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+}
+
+@-webkit-keyframes buttonAnim {
+  0% {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  50% {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  100% {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@keyframes buttonAnim {
+  0% {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  50% {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  100% {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@-webkit-keyframes topTitleAnim {
+  0% {
+    -webkit-transform: translateY(20vh);
+            transform: translateY(20vh);
+  }
+  40%, 60% {
+    -webkit-transform: translateY(10vh);
+            transform: translateY(10vh);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes topTitleAnim {
+  0% {
+    -webkit-transform: translateY(20vh);
+            transform: translateY(20vh);
+  }
+  40%, 60% {
+    -webkit-transform: translateY(10vh);
+            transform: translateY(10vh);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes bottomTitleAnim {
+  0%, 70% {
+    -webkit-transform: translateY(-10vh);
+            transform: translateY(-10vh);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes bottomTitleAnim {
+  0%, 70% {
+    -webkit-transform: translateY(-10vh);
+            transform: translateY(-10vh);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
 /*# sourceMappingURL=main.css.map */
