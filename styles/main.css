@@ -1,9 +1,12 @@
-body {
-  overflow: hidden;
+* {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
   position: relative;
 }
 
@@ -19,6 +22,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: fixed;
   top: 0;
   left: 0;
@@ -79,7 +86,7 @@ body {
   overflow-y: auto;
 }
 
-#green .button-box {
+#green .gray-box {
   height: 50vh;
   width: 100vw;
   display: -webkit-box;
@@ -156,7 +163,65 @@ body {
   transition: transform 1s ease-in, -webkit-transform 1s ease-in;
 }
 
-.button {
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+nav h1 {
+  font-size: 3vh;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav ul li {
+  font-size: 2vh;
+  list-style: none;
+  margin: auto 10px;
+}
+
+nav ul li:hover {
+  cursor: pointer;
+  opacity: 50%;
+}
+
+.button-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  background-color: lightgray;
+}
+
+.button-box .button {
   text-align: center;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -165,11 +230,11 @@ body {
   font-size: 100px;
 }
 
-.button:hover {
+.button-box .button:hover {
   cursor: pointer;
 }
 
-.left {
+.button-box .left {
   opacity: 10%;
 }
 

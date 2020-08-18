@@ -15,17 +15,21 @@
     left: 0;
 }
 
-body {
-    overflow: hidden;
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
     position: relative;
 }
 
 #ui {
     @include fullScreen();
     @include centerFlex();
+    flex-direction: column;
     position: fixed;
     top: 0;
     left: 0;
@@ -53,7 +57,7 @@ body {
     transition: transform 1s ease-in;
     z-index: 3;
     overflow-y: auto;
-    .button-box {
+    .gray-box {
         // @include fullScreen();
         height: 50vh;
         width: 100vw;
@@ -85,19 +89,53 @@ body {
     transition: transform 1s ease-in;
 }
 
-.button {
-    text-align: center;
-    width: fit-content;
-    padding: 50px;
-    font-size: 100px;
+nav {
+    @include absolutePosition();
+    @include centerFlex();
+    width: 100%;
+    padding: 20px;
+
+    h1 {
+        font-size: 3vh;
+    }
+
+    ul {
+        @include centerFlex();
+
+
+        li {
+            font-size: 2vh;
+            list-style: none;
+            margin: auto 10px;
+        }
+
+        li:hover {
+            cursor: pointer;
+            opacity: 50%;
+        }
+    }
 }
 
-.button:hover {
-    cursor: pointer;
-}
+.button-box {
+    @include centerFlex();
+    width: 100%;
+    background-color: lightgray;
 
-.left {
-    opacity: 10%;
+    .button {
+        text-align: center;
+        width: fit-content;
+        padding: 50px;
+        font-size: 100px;
+    }
+
+    .button:hover {
+        cursor: pointer;
+    }
+
+    .left {
+        opacity: 10%;
+    }
+    
 }
 
 .spacer {
