@@ -5,10 +5,12 @@ const links = document.querySelectorAll('li')
 let pageIndex = 0
 
 const job = document.querySelector('.job')
-const jobTitles = ["Front End Developer", "Full Stack Engineer", "UI/UX Designer", "Major Tech Head"]
+const jobTitles = ["Front End Developer", "Full Stack Engineer", "UI/UX Designer", "Driven Tech Head"]
 let jobIndex = 0
 
-function checkBtn(idx=pageIndex) {
+const aboutElems = document.querySelectorAll('.blue-t')
+
+function checkBtn(idx = pageIndex) {
     rightBtn.style.opacity = idx < 3 ? 1 : .1
     leftBtn.style.opacity = idx > 0 ? 1 : .1
     links.forEach((li, i) => {
@@ -17,6 +19,20 @@ function checkBtn(idx=pageIndex) {
         } else {
             li.classList.add('highlight')
         }
+    })
+    if (idx === 1) {
+        setTimeout(() => {
+            showAboutPage()
+        }, 1500)
+    }
+}
+
+function showAboutPage() {
+    aboutElems.forEach((ele, i) => {
+        setTimeout(() => {
+            ele.style.transform = 'translateY(0)'
+            ele.style.opacity = 1
+        }, 300 * i)
     })
 }
 
@@ -29,10 +45,9 @@ function changeJob() {
     setTimeout(() => {
         job.style.transform = 'translateY(0)'
     }, 1200)
-    setTimeout(changeJob, 4000)
 }
 
-setTimeout(changeJob, 4000)
+setInterval(changeJob, 4000)
 
 links.forEach((li, idx) => {
     li.addEventListener('click', () => {
