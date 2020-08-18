@@ -10,9 +10,10 @@ body {
   position: relative;
 }
 
-#ui {
-  height: 100vh;
-  width: 100vw;
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -22,15 +23,61 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(211, 211, 211, 0.301);
+  width: 100%;
+  padding: 20px;
   z-index: 100;
+}
+
+nav h1 {
+  font-size: 3vh;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav ul li {
+  font-size: 2vh;
+  list-style: none;
+  margin: auto 10px;
+}
+
+nav ul li:hover {
+  cursor: pointer;
+  opacity: 50%;
+}
+
+.button {
+  position: absolute;
+  text-align: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  top: 50vh;
+  margin-top: -60px;
+  font-size: 100px;
+  z-index: 100;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.right {
+  right: 2vw;
+}
+
+.left {
+  left: 2vw;
+  opacity: 10%;
 }
 
 #yellow {
@@ -59,22 +106,11 @@ body {
 }
 
 #green {
-  height: 100vh;
-  width: 100vw;
   position: absolute;
   top: 0;
   left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  height: 100vh;
+  width: 100vw;
   background: lightgreen;
   -webkit-transform: translateX(100vw);
           transform: translateX(100vw);
@@ -83,11 +119,11 @@ body {
   transition: transform 1s ease-in;
   transition: transform 1s ease-in, -webkit-transform 1s ease-in;
   z-index: 3;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 #green .gray-box {
-  height: 50vh;
+  height: 100vh;
   width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -218,7 +254,6 @@ nav ul li:hover {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  background-color: lightgray;
 }
 
 .button-box .button {
