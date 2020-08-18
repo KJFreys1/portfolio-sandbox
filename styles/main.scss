@@ -1,0 +1,88 @@
+@mixin centerFlex() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin fullScreen() {
+    height: 100vh;
+    width: 100vw;
+}
+
+@mixin absolutePosition() {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+#yellow {
+    @include fullScreen();
+    @include absolutePosition();
+    @include centerFlex();
+    background: lightgoldenrodyellow;
+    transform: translateX(100vw);
+    transition: transform 1s ease-in;
+    z-index: 4;
+}
+
+#green {
+    @include fullScreen();
+    @include absolutePosition();
+    @include centerFlex();
+    flex-wrap: wrap;
+    background: lightgreen;
+    transform: translateX(100vw);
+    transition: transform 1s ease-in;
+    z-index: 3;
+    overflow-y: auto;
+    .button-box {
+        @include fullScreen();
+        @include centerFlex();
+        background-color: rgb(65, 65, 65);
+    }
+    .green-box {
+        @include fullScreen();
+        @include centerFlex();
+    }
+}
+
+#blue {
+    @include fullScreen();
+    @include absolutePosition();
+    @include centerFlex();
+    background: lightblue;
+    transform: translateX(100vw);
+    transition: transform 1s ease-in;
+    z-index: 2;
+}
+
+#red {
+    @include absolutePosition();
+    @include fullScreen();
+    @include centerFlex();
+    background: lightcoral;
+    z-index: 1;
+    transition: transform 1s ease-in;
+}
+
+.button {
+    text-align: center;
+    padding: 50px;
+    font-size: 100px;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.spacer {
+    flex-grow: 1;
+}
