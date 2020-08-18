@@ -1,38 +1,27 @@
-const yellow = document.querySelector('#yellow')
-const green = document.querySelector('#green')
-const blue = document.querySelector('#blue')
-const red = document.querySelector('#red')
-const yellowButton = document.querySelector('#yellow .button')
-const greenButtons = document.querySelectorAll('#green .button')
-const blueButtons = document.querySelectorAll('#blue .button')
-const redButton = document.querySelector('#red .button')
+const leftBtn = document.querySelector('.left')
+const rightBtn = document.querySelector('.right')
+const pages = document.querySelectorAll('.page')
+console.log(pages)
+let pageIndex = 0
 
-// Right
-redButton.addEventListener('click', () => {
-    blue.style.transform = 'translateX(0)'
+rightBtn.addEventListener('click', () => {
+    if (pageIndex == 3) return
+    pageIndex++
+    pages[pageIndex].style.transform = 'translateX(0)'
+    if (pageIndex === 3) {
+        rightBtn.style.opacity = .1
+    } else if (pageIndex === 1) {
+        leftBtn.style.opacity = 1
+    }
 })
 
-// Left
-blueButtons[0].addEventListener('click', () => {
-    blue.style.transform = 'translateX(100vw)'
-})
-
-// Right
-blueButtons[1].addEventListener('click', () => {
-    green.style.transform = 'translateX(0vw)'
-})
-
-// Left
-greenButtons[0].addEventListener('click', () => {
-    green.style.transform = 'translateX(100vw)'
-})
-
-// Right
-greenButtons[1].addEventListener('click', () => {
-    yellow.style.transform = 'translateX(0vw)'
-})
-
-// Left
-yellowButton.addEventListener('click', () => {
-    yellow.style.transform = 'translateX(100vw)'
+leftBtn.addEventListener('click', () => {
+    if (pageIndex == 0) return
+    pages[pageIndex].style.transform = 'translateX(100vw)'
+    pageIndex--
+    if (pageIndex === 0) {
+        leftBtn.style.opacity = .1
+    } else if (pageIndex === 2) {
+        rightBtn.style.opacity = 1
+    }
 })

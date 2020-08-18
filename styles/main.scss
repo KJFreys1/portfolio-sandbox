@@ -23,6 +23,16 @@ body {
     position: relative;
 }
 
+#ui {
+    @include fullScreen();
+    @include centerFlex();
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(211, 211, 211, 0.301);
+    z-index: 100;
+}
+
 #yellow {
     @include fullScreen();
     @include absolutePosition();
@@ -44,7 +54,9 @@ body {
     z-index: 3;
     overflow-y: auto;
     .button-box {
-        @include fullScreen();
+        // @include fullScreen();
+        height: 50vh;
+        width: 100vw;
         @include centerFlex();
         background-color: rgb(65, 65, 65);
     }
@@ -75,12 +87,17 @@ body {
 
 .button {
     text-align: center;
+    width: fit-content;
     padding: 50px;
     font-size: 100px;
 }
 
 .button:hover {
     cursor: pointer;
+}
+
+.left {
+    opacity: 10%;
 }
 
 .spacer {

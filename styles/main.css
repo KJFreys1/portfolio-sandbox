@@ -7,6 +7,25 @@ body {
   position: relative;
 }
 
+#ui {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(211, 211, 211, 0.301);
+  z-index: 100;
+}
+
 #yellow {
   height: 100vh;
   width: 100vw;
@@ -61,7 +80,7 @@ body {
 }
 
 #green .button-box {
-  height: 100vh;
+  height: 50vh;
   width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -139,12 +158,19 @@ body {
 
 .button {
   text-align: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   padding: 50px;
   font-size: 100px;
 }
 
 .button:hover {
   cursor: pointer;
+}
+
+.left {
+  opacity: 10%;
 }
 
 .spacer {
